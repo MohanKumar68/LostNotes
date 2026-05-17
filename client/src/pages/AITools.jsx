@@ -11,9 +11,8 @@ export default function AITools() {
   const [summaryData, setSummaryData] = useState({ text: '' });
   const [summaryResult, setSummaryResult] = useState(null);
   const [summaryLoading, setSummaryLoading] = useState(false);
-
-  const serverUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
-
+  
+  const serverUrl = (import.meta.env.VITE_API_URL || 'http://localhost:5000').replace(/\/$/, '');
   const handlePlannerSubmit = async (e) => {
     e.preventDefault();
     setPlannerLoading(true);
